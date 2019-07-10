@@ -1,0 +1,35 @@
+<div class="container" *ngIf="repoInfo">
+  <br>
+  <br>
+  <h2><i class="fas fa-book"></i>&nbsp; {{repoInfo?.name}}</h2>
+  <p class="m-4">{{ repoInfo?.description}}</p>
+  <div class="row mb-3">
+      <span class="label label-default  m-3">Forks <span
+          class="counter">{{ repoInfo?.forks_count }}</span></span>
+      <span class="label label-default  m-3">Watchers <span class="counter">{{ repoInfo?.watchers_count }}</span></span>
+      <span class="label label-default  m-3"> Open issues <span
+          class="counter">{{ repoInfo?.open_issues_count }}</span></span>
+      <span class="label label-default  m-3"> Total issues <span
+            class="counter">{{ repoIssues?.total_count  }}</span></span>
+  </div>
+  <div class="card mb-5">
+    <div class="card-header">
+      <div class="float-left">
+        <h4>Pull requests</h4>
+      </div>
+      <div class="float-right">
+        <span class="btn-group">
+            <span class="d-none d-md-block">Show pull requests</span>
+            <ui-switch [(ngModel)]="showPull" (click)="updateSetting()"></ui-switch>
+        </span>
+        
+      </div>
+    </div>
+    <div class="card-body" *ngIf="showPull">
+      <div class="cardElement" *ngFor="let item of pullList">
+        <span class="active mainA"><strong> <i class="fas fa-code-branch"></i>&nbsp; {{ item?.title }} </strong></span>
+        <p class="card-text">#{{ item?.number}} opened {{ item?.updated_at | parseDate}} by <span class="" [ngClass]="{'btn btn-warning btn-sm p-1':  currentUser === item?.user?.login}"> {{ item?.user?.login}}</span></p>
+      </div>
+    </div>
+  </div>
+</div>

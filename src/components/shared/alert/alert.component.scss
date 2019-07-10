@@ -1,0 +1,36 @@
+.red {
+  color: red;
+}
+
+.green {
+  color: #00bf1b;
+}
+
+.orange {
+  color: orange;
+}
+
+.message-text {
+  margin: 0px !important;
+  line-height: 20px !important;
+  letter-spacing: 0.58px !important;
+  font-size: 14px !important;
+}
+
+// notification bar style
+.a-c-s {
+  width: 250px;
+  height: 40px;
+  background: #000000;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
+  border-radius: 5px;
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  transition: all .25s ease-in;
+}
+
+// notification bar style//

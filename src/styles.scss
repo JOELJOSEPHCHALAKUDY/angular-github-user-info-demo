@@ -1,1 +1,99 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+body,
+h6 {
+  font-size: 14px;
+  color: #24292e;
+}
+
+.linkBtn a {
+  color: #586069;
+  margin-right: 16px !important;
+}
+
+.linkBtn a:hover {
+  color: #0366d6;
+  margin-right: 16px !important;
+}
+
+.fa {
+  font-size: 12px;
+}
+
+.card .card-header a {
+  color: #586069;
+  text-decoration: none !important;
+}
+
+.card .card-header a:hover,
+.card .card-header .active,
+.mainA {
+  color: #24292e;
+}
+
+.mainA:hover {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.mainA .fas {
+  color: #32dd59 !important;
+}
+
+.card .card-header .float-left {
+  padding-top: 10px;
+}
+
+.card .card-header .btn-outline-secondary {
+  border: none;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.card .card-header .btn-outline-secondary:hover,
+.card .card-header .btn-outline-secondary:focus,
+.card .card-header .btn-outline-secondary:active {
+  color: #24292e;
+  box-shadow: none;
+}
+
+.card-text {
+  padding-left: 15px;
+  color: #586069 !important;
+  font-size: 12px;
+}
+
+.cardElement:hover {
+  background-color: #f6f8fa;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.cardElement {
+  padding: 10px 20px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.pro-badge {
+  background-color: #6f42c1 !important;
+  color: #ffffff !important;
+  border: none;
+ .fa {
+     color: #ffffff !important;
+ }
+}
+
+.counter {
+    background-color: rgba(27,31,35,.08);
+    border-radius: 20px;
+    color: #586069;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 2px 5px;
+}

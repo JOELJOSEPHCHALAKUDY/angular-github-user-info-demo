@@ -1,0 +1,19 @@
+<!-- alert message template -->
+<div class="text-center" *ngIf="message && (message | json) != '{}' && message.type != 'flash'"
+  [ngClass]="{ 'alert alert-msg': message, 'green': message.type === 'success', 'red': message.type === 'error' }">
+  <div *ngIf="checkifArray(message.text);">
+    <p *ngFor="let msg of message?.text" class="message-text"> {{ msg?.message  }}</p>
+    <br>
+  </div>
+  <div class="text-center" *ngIf="!checkifArray(message.text);">
+    <p class="message-text"> {{ message?.text  }}</p>
+    <br>
+  </div>
+</div>
+<!-- alert message template -->
+
+<!-- flash message template -->
+<div style="z-index:99999;" class="a-c-s" *ngIf="message && (message | json) != '{}' && message?.type === 'flash'">
+  {{ message?.text }}
+</div>
+<!-- flash message template -->

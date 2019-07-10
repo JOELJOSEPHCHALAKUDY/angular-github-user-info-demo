@@ -1,0 +1,12 @@
+<!-- navbar starts here -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+  <a class="navbar-brand" href="#">Github Info Demo</a>
+  <form class="form-inline my-2 my-lg-0">
+    <input [onReturn] name="search" [(ngModel)]="username" class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Search">
+    <button [onReturn] (click)="searchUser()" class="btn btn-outline-light my-2 my-sm-0" type="button">Search git user</button>
+  </form>
+</nav>
+<!-- navbar ends here -->
+
+
+<router-outlet></router-outlet>

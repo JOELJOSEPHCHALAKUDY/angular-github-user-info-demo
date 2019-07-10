@@ -1,0 +1,57 @@
+<div class="container-fluid" *ngIf="userData; else noData">
+  <br>
+  <div class="col">
+    <div class="row mb-5">
+      <div class="col-md-3">
+        <img [src]="userData ? userData?.avatar_url : 'assets/img/loader.gif'" class="img-fluid img-thumbnail">
+        <h3>{{userData?.name}}</h3>
+        <h4 style="font-weight: 400;" class="m-t-10">{{userData?.login}} </h4>
+        <hr>
+        <br><br>
+        <p>{{ userData?.bio }}</p>
+        <h6 *ngIf="userData?.company"><i class="fas fa-user-friends"> </i> {{ userData?.company }}</h6>
+        <h6 *ngIf="userData?.location"><i class="fas fa-map-marker-alt"> </i> {{ userData?.location }}</h6>
+        <h6 *ngIf="userData?.blog"><i class="fas fa-link"> </i> &nbsp;<a href="userData?.blog">{{ userData?.blog }}</a>
+        </h6>
+      </div>
+      <div class="col-md-9">
+        <div class="row">
+          <span class="label label-default  m-3">Repositories <span
+              class="counter">{{ userData?.public_repos }}</span></span>
+          <span class="label label-default  m-3">Following <span class="counter">{{ userData?.following }}</span></span>
+          <span class="label label-default  m-3"> Followers <span
+              class="counter">{{ userData?.followers }}</span></span>
+        </div>
+        <hr>
+        <div class="col">
+          <h3>Starred Repositories</h3>
+          <hr>
+          <div *ngIf="repoList && repoList.length > 0;else noitems;">
+            <div *ngFor="let repo of repoList">
+              <h5><a routerLink="/{{repo?.owner?.login}}/{{repo?.name}}">{{ repo?.name }}</a></h5>
+              <p> {{ repo?.description }} </p>
+              <div class="linkBtn">
+                <a routerLink=""><span class="fa fa-star"></span> {{ repo?.stargazers_count}} </a>
+                <a routerLink=""><i class="fas fa-code-branch"></i> {{ repo?.forks_count }} </a>
+                <a routerLink=""><i class="fas fa-balance-scale"></i> {{ repo?.license?.name }} </a>
+                <p style="display: inline;"> Updated {{ repo?.updated_at | parseDate}}</p>
+              </div>
+              <hr>
+            </div>
+          </div>
+          <ng-template #noitems>
+            <div class="no-item-text mx-auto mt-2">No repositories to list</div>
+          </ng-template>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<ng-template #noData>
+    <div class="container w-100 h-100">
+       
+    </div>
+</ng-template>
+<alert></alert>
